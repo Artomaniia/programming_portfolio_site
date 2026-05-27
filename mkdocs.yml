@@ -1,0 +1,23 @@
+site_name: Работы по программированию
+site_url: https://artomaniia.github.io/programming_portfolio_site/
+
+theme:
+  name: material
+  language: ru
+
+nav:
+  - Главная: index.md
+  - Работа 1: work1.md
+  - Работа 2: work2.md
+  - Работа 3: work3.md
+  - Работа 4: work4.md
+  - Работа 5: work5.md
+  - Работа 6: work6.md
+  - Работа 7: work7.md
+  - Работа 8: work8.md
+
+markdown_extensions:
+  - admonition
+  - codehilite
+  - toc:
+      permalink: true
