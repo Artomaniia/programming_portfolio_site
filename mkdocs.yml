@@ -7,7 +7,7 @@ theme:
 
 nav:
   - Главная: index.md
-  - Работа 1: work1.md
+  - Работа 1 (two summ): work1.md
   - Работа 2: work2.md
   - Работа 3: work3.md
   - Работа 4: work4.md
