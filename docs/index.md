@@ -4,7 +4,7 @@
 
 ## Проекты
 
-- [Работа 1](programming/work1.md)
+- [Работа 1 (two summ)](programming/work1.md)
 - [Работа 2](programming/work2.md)
 - [Работа 3](programming/work3.md)
 - [Работа 4](programming/work4.md)
