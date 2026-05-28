@@ -21,7 +21,7 @@ theme:
 
 nav:
   - Главная: index.md
-  - Работа 1 (two summ): work1.md
+  - Работа 1 (two summ): programming/work1.md
   - Работа 2 (calculate): work2.md
   - Работа 3 (бИнарное дерево): work3.md
   - Работа 4 (Тг Боть): work4.md
