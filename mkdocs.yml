@@ -3,6 +3,20 @@ site_url: https://artomaniia.github.io/programming_portfolio_site/
 
 theme:
   name: material
+  palette:
+    - scheme: slate
+      primary: deep purple
+      accent: pink
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+
+    - scheme: default
+      primary: indigo
+      accent: deep orange
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
   language: ru
 
 nav:
