@@ -22,13 +22,13 @@ theme:
 nav:
   - Главная: index.md
   - Работа 1 (two summ): programming/work1.md
-  - Работа 2 (calculate): work2.md
-  - Работа 3 (бИнарное дерево): work3.md
-  - Работа 4 (Тг Боть): work4.md
-  - Работа 5: work5.md
-  - Работа 6: work6.md
-  - Работа 7: work7.md
-  - Работа 8: work8.md
+  - Работа 2 (calculate): programming/work2.md
+  - Работа 3 (бИнарное дерево): programming/work3.md
+  - Работа 4 (Тг Боть): programming/work4.md
+  - Работа 5: programming/work5.md
+  - Работа 6: programming/work6.md
+  - Работа 7: programming/work7.md
+  - Работа 8: programming/work8.md
 
 markdown_extensions:
   - admonition
