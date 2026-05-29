@@ -1,0 +1,1221 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://artomaniia.github.io/programming_portfolio_site/programming/work3/">
+      
+      
+        <link rel="prev" href="../work2/">
+      
+      
+        <link rel="next" href="../work4/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Работа 3 (бИнарное дерево) - Работы по программированию</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="pink">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="../.." title="Работы по программированию" class="md-header__button md-logo" aria-label="Работы по программированию" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Работы по программированию
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Работа 3 (бИнарное дерево)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="pink"  aria-label="Перейти на светлую сторону"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Перейти на светлую сторону" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="deep-orange"  aria-label="Принять тёмные силы"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Принять тёмные силы" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Работы по программированию" class="md-nav__button md-logo" aria-label="Работы по программированию" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Работы по программированию
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Главная
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../work1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Работа 1 (two summ)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../work2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Работа 2 (calculate)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Работа 3 (бИнарное дерево)
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Работа 3 (бИнарное дерево)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Тема
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ссылка на репозиторий
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Формулировка задания
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Используемый вариант
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Что было сделано
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Логика работы программы
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Представление дерева
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Дополнительные контейнеры
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Структура проекта
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Основные функции
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Основные функции">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gen_bin_tree" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        gen_bin_tree
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calculate_left_leaf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        calculate_left_leaf
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calculate_right_leaf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        calculate_right_leaf
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#count_nodes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        count_nodes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Тестирование
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Запуск программы
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Итог
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../work4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Работа 4 (Тг Боть)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../work5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Работа 5 (Fибоначи)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../work6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Работа 6 (Что таке decorator?)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../work7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Работа 7 (Ещё декоратор)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../work8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Работа 8 (Что по курсу цб?)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hehehe/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    хехехехехехехехехеххехехехех
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Тема
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ссылка на репозиторий
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Формулировка задания
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Используемый вариант
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Что было сделано
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Логика работы программы
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Представление дерева
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Дополнительные контейнеры
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Структура проекта
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Основные функции
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Основные функции">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gen_bin_tree" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        gen_bin_tree
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calculate_left_leaf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        calculate_left_leaf
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calculate_right_leaf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        calculate_right_leaf
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#count_nodes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        count_nodes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Тестирование
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Запуск программы
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Итог
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="_1">Описание выполненного задания<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h2 id="_2">Тема<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>Построение бинарного дерева на языке Python.</p>
+<h2 id="_3">Ссылка на репозиторий<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>Репозиторий с выполненной работой:<br />
+https://github.com/Artomaniia/prog_herzen/tree/main/bin_tree</p>
+<h2 id="_4">Формулировка задания<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>Необходимо разработать программу на языке Python, которая строит бинарное дерево. Бинарное дерево — это структура данных, в каждом узле которой может быть не больше двух потомков: левого и правого.</p>
+<p>Базовый вариант отображения результата — дерево в виде вложенного словаря. Дополнительно необходимо рассмотреть другие структуры данных, в том числе контейнеры из модуля <code>collections</code>, которые можно использовать для хранения бинарного дерева.</p>
+<p>Также требуется:</p>
+<ul>
+<li>реализовать рекурсивную функцию <code>gen_bin_tree</code>;</li>
+<li>учитывать параметры <code>height</code> и <code>root</code>, переданные в функцию;</li>
+<li>если параметры не переданы, использовать значения из индивидуального варианта;</li>
+<li>добавить документацию к коду в формате docstring;</li>
+<li>использовать аннотации типов;</li>
+<li>написать тесты с использованием модуля <code>unittest</code>.</li>
+</ul>
+<h2 id="_5">Используемый вариант<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p>В работе реализован вариант №9:</p>
+<div class="codehilite"><pre><span></span><code>Root = 9
+height = 6
+left_leaf = root * 2 + 1
+right_leaf = 2 * root - 1
+</code></pre></div>
+
+<p>То есть по умолчанию дерево строится с корневым значением <code>9</code> и высотой <code>6</code>.</p>
+<p>Для каждого узла значения потомков вычисляются по формулам:</p>
+<div class="codehilite"><pre><span></span><code><span class="n">left_leaf</span> <span class="o">=</span> <span class="n">root</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="n">right_leaf</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">root</span> <span class="o">-</span> <span class="mi">1</span>
+</code></pre></div>
+
+<h2 id="_6">Что было сделано<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<p>В проекте реализована программа для построения бинарного дерева по заданным правилам.</p>
+<p>Основная функция проекта — <code>gen_bin_tree</code>. Она рекурсивно строит дерево, начиная с корневого узла, и для каждого узла вычисляет левого и правого потомка по формулам варианта №9.</p>
+<p>Если при вызове функции не передавать параметры, используются значения по умолчанию:</p>
+<div class="codehilite"><pre><span></span><code><span class="n">root</span> <span class="o">=</span> <span class="mi">9</span>
+<span class="n">height</span> <span class="o">=</span> <span class="mi">6</span>
+</code></pre></div>
+
+<p>Пример вызова:</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">binary_tree</span><span class="w"> </span><span class="kn">import</span> <span class="n">gen_bin_tree</span>
+
+<span class="n">tree</span> <span class="o">=</span> <span class="n">gen_bin_tree</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tree</span><span class="p">)</span>
+</code></pre></div>
+
+<p>Также функция поддерживает передачу собственных значений <code>root</code> и <code>height</code>:</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">binary_tree</span><span class="w"> </span><span class="kn">import</span> <span class="n">gen_bin_tree</span>
+
+<span class="n">tree</span> <span class="o">=</span> <span class="n">gen_bin_tree</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">root</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tree</span><span class="p">)</span>
+</code></pre></div>
+
+<p>В этом случае дерево будет построено не от стандартного корня <code>9</code>, а от переданного значения <code>10</code>, а высота дерева будет равна <code>3</code>.</p>
+<h2 id="_7">Логика работы программы<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<p>Программа работает следующим образом:</p>
+<ol>
+<li>Определяется текущее значение узла.</li>
+<li>Если высота дерева равна <code>1</code>, создаётся только один узел без потомков.</li>
+<li>Если высота больше <code>1</code>, вычисляются левый и правый потомки.</li>
+<li>Для каждого потомка рекурсивно вызывается построение поддерева.</li>
+<li>Рекурсия завершается, когда достигнута нужная высота дерева.</li>
+</ol>
+<p>Таким образом создаётся полное бинарное дерево, где каждый узел, кроме листьев, имеет двух потомков.</p>
+<h2 id="_8">Представление дерева<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<p>Базовый вариант хранения дерева реализован через вложенные словари.</p>
+<p>Пример структуры одного узла:</p>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+    <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="mi">9</span><span class="p">,</span>
+    <span class="s2">&quot;left&quot;</span><span class="p">:</span> <span class="p">{</span><span class="o">...</span><span class="p">},</span>
+    <span class="s2">&quot;right&quot;</span><span class="p">:</span> <span class="p">{</span><span class="o">...</span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>Здесь:</p>
+<ul>
+<li><code>value</code> — значение текущего узла;</li>
+<li><code>left</code> — левое поддерево;</li>
+<li><code>right</code> — правое поддерево.</li>
+</ul>
+<p>Если узел является листом, то его левый и правый потомки равны <code>None</code>:</p>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+    <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="mi">9</span><span class="p">,</span>
+    <span class="s2">&quot;left&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="s2">&quot;right&quot;</span><span class="p">:</span> <span class="kc">None</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h2 id="_9">Дополнительные контейнеры<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<p>Кроме базового варианта через словарь, в проекте реализована возможность построения дерева с использованием других контейнеров.</p>
+<p>Поддерживаются следующие варианты:</p>
+<table>
+<thead>
+<tr>
+<th>Значение параметра <code>container</code></th>
+<th>Структура хранения</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>"dict"</code></td>
+<td>вложенные словари</td>
+</tr>
+<tr>
+<td><code>"list"</code></td>
+<td>вложенные списки</td>
+</tr>
+<tr>
+<td><code>"ordered_dict"</code></td>
+<td><code>collections.OrderedDict</code></td>
+</tr>
+<tr>
+<td><code>"defaultdict"</code></td>
+<td><code>collections.defaultdict</code></td>
+</tr>
+<tr>
+<td><code>"deque"</code></td>
+<td><code>collections.deque</code></td>
+</tr>
+</tbody>
+</table>
+<p>Пример использования:</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">binary_tree</span><span class="w"> </span><span class="kn">import</span> <span class="n">gen_bin_tree</span>
+
+<span class="n">tree_as_dict</span> <span class="o">=</span> <span class="n">gen_bin_tree</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">container</span><span class="o">=</span><span class="s2">&quot;dict&quot;</span><span class="p">)</span>
+<span class="n">tree_as_list</span> <span class="o">=</span> <span class="n">gen_bin_tree</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">container</span><span class="o">=</span><span class="s2">&quot;list&quot;</span><span class="p">)</span>
+<span class="n">tree_as_deque</span> <span class="o">=</span> <span class="n">gen_bin_tree</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">container</span><span class="o">=</span><span class="s2">&quot;deque&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<p>Это позволяет показать, что бинарное дерево можно хранить не только в словаре, но и в других структурах данных.</p>
+<h2 id="_10">Структура проекта<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><code>bin_tree/
+├── binary_tree.py       # Основной модуль с функциями построения дерева
+├── main.py              # Файл для запуска программы и вывода результата
+├── test_binary_tree.py  # Тесты unittest
+├── README.md            # Описание проекта
+└── requirements.txt     # Информация о зависимостях
+</code></pre></div>
+
+<h2 id="_11">Основные функции<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
+<h3 id="gen_bin_tree"><code>gen_bin_tree</code><a class="headerlink" href="#gen_bin_tree" title="Permanent link">&para;</a></h3>
+<p>Рекурсивно строит бинарное дерево.</p>
+<p>Принимает параметры:</p>
+<ul>
+<li><code>height</code> — высота дерева;</li>
+<li><code>root</code> — значение корневого узла;</li>
+<li><code>container</code> — способ хранения дерева.</li>
+</ul>
+<p>Если <code>height</code> и <code>root</code> не переданы, используются значения варианта №9.</p>
+<h3 id="calculate_left_leaf"><code>calculate_left_leaf</code><a class="headerlink" href="#calculate_left_leaf" title="Permanent link">&para;</a></h3>
+<p>Вычисляет значение левого потомка по формуле:</p>
+<div class="codehilite"><pre><span></span><code><span class="n">root</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span>
+</code></pre></div>
+
+<h3 id="calculate_right_leaf"><code>calculate_right_leaf</code><a class="headerlink" href="#calculate_right_leaf" title="Permanent link">&para;</a></h3>
+<p>Вычисляет значение правого потомка по формуле:</p>
+<div class="codehilite"><pre><span></span><code><span class="mi">2</span> <span class="o">*</span> <span class="n">root</span> <span class="o">-</span> <span class="mi">1</span>
+</code></pre></div>
+
+<h3 id="count_nodes"><code>count_nodes</code><a class="headerlink" href="#count_nodes" title="Permanent link">&para;</a></h3>
+<p>Подсчитывает количество узлов в построенном дереве.</p>
+<p>Эта функция используется в тестах для проверки корректности построения дерева.</p>
+<h2 id="_12">Тестирование<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
+<p>Для проверки программы написаны тесты с использованием стандартного модуля <code>unittest</code>.</p>
+<p>В тестах проверяется:</p>
+<ul>
+<li>построение дерева по варианту №9;</li>
+<li>использование значений по умолчанию <code>root = 9</code> и <code>height = 6</code>;</li>
+<li>корректность формул для левого и правого потомка;</li>
+<li>возможность передавать собственные значения <code>root</code> и <code>height</code>;</li>
+<li>построение дерева высоты <code>1</code>;</li>
+<li>подсчёт количества узлов в дереве;</li>
+<li>обработка некорректного значения высоты;</li>
+<li>построение дерева в разных контейнерах: <code>dict</code>, <code>list</code>, <code>OrderedDict</code>, <code>defaultdict</code>, <code>deque</code>.</li>
+</ul>
+<p>Запуск тестов выполняется командой:</p>
+<div class="codehilite"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>unittest<span class="w"> </span>-v
+</code></pre></div>
+
+<h2 id="_13">Запуск программы<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h2>
+<p>Для запуска программы нужно выполнить команду:</p>
+<div class="codehilite"><pre><span></span><code>python<span class="w"> </span>main.py
+</code></pre></div>
+
+<p>После запуска программа построит бинарное дерево с параметрами варианта №9 и выведет его на экран.</p>
+<h2 id="_14">Итог<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h2>
+<p>В рамках задания была реализована программа для рекурсивного построения бинарного дерева. Дерево строится по индивидуальному варианту №9, где корень равен <code>9</code>, высота равна <code>6</code>, левый потомок вычисляется как <code>root * 2 + 1</code>, а правый потомок — как <code>2 * root - 1</code>.</p>
+<p>Решение оформлено с использованием документации в формате docstring, аннотаций типов и тестов <code>unittest</code>. Дополнительно рассмотрены разные способы хранения дерева, включая контейнеры из модуля <code>collections</code>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
