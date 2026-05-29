@@ -15,3 +15,5 @@
 - [Работа 8 (Что по курсу цб?)](programming/work8.md)
 
 ![](unnamed.jpg)
+
+[нажми на меня))))](programming/meme.md)
