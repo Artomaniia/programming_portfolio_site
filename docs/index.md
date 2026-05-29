@@ -2,7 +2,7 @@
 
 Добро пожаловать в мое портфолио.
 
-![](unnamed.jpg)
+
 
 ## Проекты
 
@@ -14,3 +14,5 @@
 - [Работа 6 (Что таке decorator?)](programming/work6.md)
 - [Работа 7 (Ещё декоратор)](programming/work7.md)
 - [Работа 8 (Что по курсу цб?)](programming/work8.md)
+
+![](unnamed.jpg)
